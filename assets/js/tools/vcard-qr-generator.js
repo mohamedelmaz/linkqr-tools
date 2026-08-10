@@ -68,6 +68,8 @@
                 return;
             }
 
+            if (typeof window.signPngDataUrl === 'function') { urlData = window.signPngDataUrl(urlData); }
+            if (!urlData) { return; }
             var a = document.createElement('a');
             a.href = urlData;
             a.download = 'vcard-qr.png';

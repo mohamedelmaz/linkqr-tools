@@ -18,7 +18,8 @@
             var text = message ? message.value.trim() : '';
             var link = 'sms:' + phoneNumber;
             if (text) {
-                link += '&body=' + encodeURIComponent(text);
+                var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+                link += (isIOS ? '&' : '?') + 'body=' + encodeURIComponent(text);
             }
 
             if (result) result.innerHTML = '<a href="' + link + '">' + link + '</a>';
