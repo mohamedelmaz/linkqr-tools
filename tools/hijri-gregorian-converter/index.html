@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hijri Gregorian Converter — Accurate Islamic Date Conversion — LinkQR Tools</title>
+    <meta name="description" content="Convert dates between Hijri Islamic Umm al-Qura and Gregorian calendars accurately using the Intl API. Two-way converter with today display.">
+    <link rel="canonical" href="https://linkqr.tools/tools/hijri-gregorian-converter/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LinkQR Tools">
+    <meta property="og:title" content="Hijri Gregorian Converter — Accurate Islamic Date Conversion — LinkQR Tools">
+    <meta property="og:description" content="Convert dates between Hijri Islamic Umm al-Qura and Gregorian calendars accurately using the Intl API.">
+    <meta property="og:url" content="https://linkqr.tools/tools/hijri-gregorian-converter/">
+    <meta property="og:image" content="/assets/img/og-cover.png">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Hijri Gregorian Converter — Accurate Islamic Date Conversion — LinkQR Tools">
+    <meta name="twitter:description" content="Convert dates between Hijri Islamic Umm al-Qura and Gregorian calendars accurately using the Intl API.">
+    <meta name="twitter:image" content="/assets/img/og-cover.png">
+    <link rel="icon" href="../../assets/img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="manifest" href="../../manifest.webmanifest">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Hijri Gregorian Converter",
+        "url": "https://linkqr.tools/tools/hijri-gregorian-converter/",
+        "description": "Two-way date converter between Hijri Umm al-Qura and Gregorian calendars.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "LinkQR Tools",
+            "url": "https://linkqr.tools/"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- © 2026 LinkQR Tools — https://linkqr.tools — All rights reserved. -->
+    <header class="site-header">
+        <div class="container">
+            <a href="../../index.html" class="brand">
+                <img src="../../assets/img/logo.svg" alt="LinkQR Tools logo" width="32" height="32">
+                <span>LinkQR Tools</span>
+            </a>
+            <nav class="main-nav">
+                <div class="dropdown">
+                    <a href="../../index.html" class="dropdown-toggle">Tools</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-group">Links &amp; QR</div>
+                        <a href="../../tools/whatsapp-link-generator/index.html">WhatsApp Link Generator</a>
+                        <a href="../../tools/whatsapp-qr-generator/index.html">WhatsApp QR Generator</a>
+                        <a href="../../tools/telegram-link-generator/index.html">Telegram Link Generator</a>
+                        <a href="../../tools/youtube-timestamp-link-generator/index.html">YouTube Timestamp Link Generator</a>
+                        <a href="../../tools/email-link-generator/index.html">Email Link Generator</a>
+                        <a href="../../tools/sms-link-generator/index.html">SMS Link Generator</a>
+                        <a href="../../tools/wifi-qr-generator/index.html">WiFi QR Generator</a>
+                        <a href="../../tools/vcard-qr-generator/index.html">vCard QR Generator</a>
+                        <a href="../../tools/utm-builder/index.html">UTM Builder</a>
+                        <a href="../../tools/character-counter/index.html">Character Counter</a>
+                        <div class="dropdown-group">Calculators</div>
+                        <a href="../../tools/age-calculator/index.html">Age Calculator</a>
+                        <a href="../../tools/hijri-gregorian-converter/index.html">Hijri-Gregorian Converter</a>
+                        <a href="../../tools/bmi-calculator/index.html">BMI Calculator</a>
+                        <a href="../../tools/calorie-calculator/index.html">Calorie Calculator</a>
+                    </div>
+                </div>
+                <a href="../../guides/index.html">Guides</a>
+                <a href="../../about/index.html">About</a>
+                <a href="../../contact/index.html">Contact</a>
+            </nav>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+  <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="4"/>
+    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+  </svg>
+  <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            <h1>Hijri Gregorian Converter</h1>
+            <p>Convert dates between Hijri (Islamic Umm al-Qura) and Gregorian calendars accurately.</p>
+
+            <div class="tool-card">
+                <p><strong>Today:</strong> <span id="today-gregorian"></span> | <span id="today-hijri"></span></p>
+
+                <form id="hijri-form" onsubmit="event.preventDefault();">
+                    <div class="form-group">
+                        <label for="gregorian-input">Gregorian Date</label>
+                        <input type="date" id="gregorian-input" class="form-control">
+                    </div>
+                    <button type="button" class="btn btn-primary" id="to-hijri-btn">Convert to Hijri</button>
+
+                    <div class="form-group" style="margin-top:1rem;">
+                        <label for="hijri-input">Hijri Date</label>
+                        <input type="text" id="hijri-input" class="form-control" placeholder="YYYY-MM-DD (e.g. 1446-12-01)">
+                    </div>
+                    <button type="button" class="btn btn-secondary" id="to-gregorian-btn">Convert to Gregorian</button>
+                </form>
+
+                <div class="result-box" id="hijri-result" style="display:none;">
+                    <p id="result-text"></p>
+                </div>
+            </div>
+
+            <section class="content-section">
+                <h2>Frequently Asked Questions</h2>
+                <details style="margin-bottom:1rem;">
+                    <summary style="cursor:pointer;font-weight:500;">What is Umm al-Qura calendar?</summary>
+                    <p style="margin-top:0.5rem;color:var(--color-text-light);">Umm al-Qura is the official Hijri calendar used in Saudi Arabia and many Muslim countries. It is based on astronomical calculations and sighting data.</p>
+                </details>
+                <details style="margin-bottom:1rem;">
+                    <summary style="cursor:pointer;font-weight:500;">How accurate is the conversion?</summary>
+                    <p style="margin-top:0.5rem;color:var(--color-text-light);">This converter uses the browser's built-in Intl.DateTimeFormat with the islamic-umalqura calendar, which is the most accurate widely available method for civil Hijri dates.</p>
+                </details>
+                <details style="margin-bottom:1rem;">
+                    <summary style="cursor:pointer;font-weight:500;">Why do Hijri and Gregorian dates differ?</summary>
+                    <p style="margin-top:0.5rem;color:var(--color-text-light);">The Hijri calendar is lunar (354 or 355 days) while the Gregorian calendar is solar (365 or 366 days). This causes the Hijri year to be about 11 days shorter, so dates drift relative to the Gregorian calendar.</p>
+                </details>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="../../about/index.html">About</a>
+                <a href="../../contact/index.html">Contact</a>
+                <a href="../../privacy-policy/index.html">Privacy Policy</a>
+                <a href="../../terms/index.html">Terms</a>
+                <a href="../../developers/index.html">Developers / API</a>
+            </div>
+            <p>&copy; <span data-year></span> LinkQR Tools. All rights reserved.</p>
+            <p class="small">🔒 Runs 100% in your browser — we couldn't read your data even if we wanted to. Free forever · Unlimited · No watermarks · No signup.</p>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/app.js" defer></script>
+    <script src="../../assets/js/tools/hijri-gregorian-converter.js" defer></script>
+</body>
+</html>

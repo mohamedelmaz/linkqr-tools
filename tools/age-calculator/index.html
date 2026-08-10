@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator — Calculate Exact Age in Years, Months, Days — LinkQR Tools</title>
+    <meta name="description" content="Calculate your exact age in years, months, and days with our free online Age Calculator. Also shows total weeks, months, and days until next birthday.">
+    <link rel="canonical" href="https://linkqr.tools/tools/age-calculator/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LinkQR Tools">
+    <meta property="og:title" content="Age Calculator — Calculate Exact Age in Years, Months, Days — LinkQR Tools">
+    <meta property="og:description" content="Calculate your exact age in years, months, and days with our free online Age Calculator.">
+    <meta property="og:url" content="https://linkqr.tools/tools/age-calculator/">
+    <meta property="og:image" content="/assets/img/og-cover.png">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Age Calculator — Calculate Exact Age in Years, Months, Days — LinkQR Tools">
+    <meta name="twitter:description" content="Calculate your exact age in years, months, and days with our free online Age Calculator.">
+    <meta name="twitter:image" content="/assets/img/og-cover.png">
+    <link rel="icon" href="../../assets/img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="manifest" href="../../manifest.webmanifest">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Age Calculator",
+        "url": "https://linkqr.tools/tools/age-calculator/",
+        "description": "Calculate exact age in years, months, and days with additional stats.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "LinkQR Tools",
+            "url": "https://linkqr.tools/"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- © 2026 LinkQR Tools — https://linkqr.tools — All rights reserved. -->
+    <header class="site-header">
+        <div class="container">
+            <a href="../../index.html" class="brand">
+                <img src="../../assets/img/logo.svg" alt="LinkQR Tools logo" width="32" height="32">
+                <span>LinkQR Tools</span>
+            </a>
+            <nav class="main-nav">
+                <div class="dropdown">
+                    <a href="../../index.html" class="dropdown-toggle">Tools</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-group">Links &amp; QR</div>
+                        <a href="../../tools/whatsapp-link-generator/index.html">WhatsApp Link Generator</a>
+                        <a href="../../tools/whatsapp-qr-generator/index.html">WhatsApp QR Generator</a>
+                        <a href="../../tools/telegram-link-generator/index.html">Telegram Link Generator</a>
+                        <a href="../../tools/youtube-timestamp-link-generator/index.html">YouTube Timestamp Link Generator</a>
+                        <a href="../../tools/email-link-generator/index.html">Email Link Generator</a>
+                        <a href="../../tools/sms-link-generator/index.html">SMS Link Generator</a>
+                        <a href="../../tools/wifi-qr-generator/index.html">WiFi QR Generator</a>
+                        <a href="../../tools/vcard-qr-generator/index.html">vCard QR Generator</a>
+                        <a href="../../tools/utm-builder/index.html">UTM Builder</a>
+                        <a href="../../tools/character-counter/index.html">Character Counter</a>
+                        <div class="dropdown-group">Calculators</div>
+                        <a href="../../tools/age-calculator/index.html">Age Calculator</a>
+                        <a href="../../tools/hijri-gregorian-converter/index.html">Hijri-Gregorian Converter</a>
+                        <a href="../../tools/bmi-calculator/index.html">BMI Calculator</a>
+                        <a href="../../tools/calorie-calculator/index.html">Calorie Calculator</a>
+                    </div>
+                </div>
+                <a href="../../guides/index.html">Guides</a>
+                <a href="../../about/index.html">About</a>
+                <a href="../../contact/index.html">Contact</a>
+            </nav>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+  <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="4"/>
+    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+  </svg>
+  <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            <h1>Age Calculator</h1>
+            <p>Calculate exact age in years, months, days, and more.</p>
+
+            <div class="tool-card">
+                <form id="age-form" onsubmit="event.preventDefault();">
+                    <div class="form-group">
+                        <label for="dob">Date of Birth *</label>
+                        <input type="date" id="dob" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ref-date">Reference Date (optional)</label>
+                        <input type="date" id="ref-date" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Calculate Age</button>
+                </form>
+
+                <div class="result-box" id="age-result" style="display:none;">
+                    <p><strong>Age:</strong> <span id="age-ymd"></span></p>
+                    <p><strong>Total Days:</strong> <span id="total-days"></span></p>
+                    <p><strong>Total Weeks:</strong> <span id="total-weeks"></span></p>
+                    <p><strong>Total Months:</strong> <span id="total-months"></span></p>
+                    <p><strong>Days Until Next Birthday:</strong> <span id="days-until"></span></p>
+                </div>
+
+                <p class="notice">Your health data never leaves your device.</p>
+            </div>
+
+            <section class="content-section">
+                <h2>Frequently Asked Questions</h2>
+                <details style="margin-bottom:1rem;">
+                    <summary style="cursor:pointer;font-weight:500;">How accurate is this age calculator?</summary>
+                    <p style="margin-top:0.5rem;color:var(--color-text-light);">The calculator uses exact calendar math, accounting for varying month lengths and leap years, giving you precise years, months, and days.</p>
+                </details>
+                <details style="margin-bottom:1rem;">
+                    <summary style="cursor:pointer;font-weight:500;">Does it handle leap years correctly?</summary>
+                    <p style="margin-top:0.5rem;color:var(--color-text-light);">Yes. February 29 births are handled correctly, and the total days calculation accounts for leap years in the date range.</p>
+                </details>
+                <details style="margin-bottom:1rem;">
+                    <summary style="cursor:pointer;font-weight:500;">What is the reference date used for?</summary>
+                    <p style="margin-top:0.5rem;color:var(--color-text-light);">By default, the reference date is today. You can set a past or future date to calculate your age at a specific point in time.</p>
+                </details>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="../../about/index.html">About</a>
+                <a href="../../contact/index.html">Contact</a>
+                <a href="../../privacy-policy/index.html">Privacy Policy</a>
+                <a href="../../terms/index.html">Terms</a>
+                <a href="../../developers/index.html">Developers / API</a>
+            </div>
+            <p>&copy; <span data-year></span> LinkQR Tools. All rights reserved.</p>
+            <p class="small">🔒 Runs 100% in your browser — we couldn't read your data even if we wanted to. Free forever · Unlimited · No watermarks · No signup.</p>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/app.js" defer></script>
+    <script src="../../assets/js/tools/age-calculator.js" defer></script>
+</body>
+</html>

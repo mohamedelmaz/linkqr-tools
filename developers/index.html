@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free QR Code API &amp; JavaScript SDK — LinkQR Tools</title>
+    <meta name="description" content="Use LinkQR.js SDK to generate QR codes, WhatsApp links, Telegram links, UTM links, vCards and more — all client-side, free, no server costs.">
+    <link rel="canonical" href="https://linkqr.tools/developers/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LinkQR Tools">
+    <meta property="og:title" content="Free QR Code API &amp; JavaScript SDK — LinkQR Tools">
+    <meta property="og:description" content="Use LinkQR.js SDK to generate QR codes, WhatsApp links, Telegram links, UTM links, vCards and more — all client-side, free, no server costs.">
+    <meta property="og:url" content="https://linkqr.tools/developers/">
+    <meta property="og:image" content="https://linkqr.tools/assets/img/og-cover.png">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Free QR Code API &amp; JavaScript SDK — LinkQR Tools">
+    <meta name="twitter:description" content="Use LinkQR.js SDK to generate QR codes, WhatsApp links, Telegram links, UTM links, vCards and more — all client-side, free, no server costs.">
+    <meta name="twitter:image" content="https://linkqr.tools/assets/img/og-cover.png">
+    <link rel="icon" href="../assets/img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="manifest" href="../manifest.webmanifest">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "LinkQR.js SDK",
+        "description": "Client-side JavaScript SDK for generating QR codes, link utilities and contact cards without server costs.",
+        "url": "https://linkqr.tools/developers/",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- © 2026 LinkQR Tools — https://linkqr.tools — All rights reserved. -->
+    <header class="site-header">
+        <div class="container">
+            <a href="../index.html" class="brand">
+                <img src="../assets/img/logo.svg" alt="LinkQR Tools logo" width="32" height="32">
+                <span>LinkQR Tools</span>
+            </a>
+            <nav class="main-nav">
+                <div class="dropdown">
+                    <a href="../index.html" class="dropdown-toggle">Tools</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-group">Links &amp; QR</div>
+                        <a href="../tools/whatsapp-link-generator/index.html">WhatsApp Link Generator</a>
+                        <a href="../tools/whatsapp-qr-generator/index.html">WhatsApp QR Generator</a>
+                        <a href="../tools/telegram-link-generator/index.html">Telegram Link Generator</a>
+                        <a href="../tools/youtube-timestamp-link-generator/index.html">YouTube Timestamp Link Generator</a>
+                        <a href="../tools/email-link-generator/index.html">Email Link Generator</a>
+                        <a href="../tools/sms-link-generator/index.html">SMS Link Generator</a>
+                        <a href="../tools/wifi-qr-generator/index.html">WiFi QR Generator</a>
+                        <a href="../tools/vcard-qr-generator/index.html">vCard QR Generator</a>
+                        <a href="../tools/utm-builder/index.html">UTM Builder</a>
+                        <a href="../tools/character-counter/index.html">Character Counter</a>
+                        <div class="dropdown-group">Calculators</div>
+                        <a href="../tools/age-calculator/index.html">Age Calculator</a>
+                        <a href="../tools/hijri-gregorian-converter/index.html">Hijri-Gregorian Converter</a>
+                        <a href="../tools/bmi-calculator/index.html">BMI Calculator</a>
+                        <a href="../tools/calorie-calculator/index.html">Calorie Calculator</a>
+                    </div>
+                </div>
+                <a href="../guides/index.html">Guides</a>
+                <a href="../about/index.html">About</a>
+                <a href="../contact/index.html">Contact</a>
+            </nav>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+  <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="4"/>
+    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+  </svg>
+  <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <section class="hero">
+            <div class="container">
+                <h1>Developers — LinkQR.js SDK</h1>
+                <p>The first QR &amp; link API with zero server costs — for you and for us. Unlimited, free, privacy-first.</p>
+                <p class="notice notice-success">💯 Drop the script in, call the methods, generate links and QR codes entirely in the browser. No backend, no limits, no tracking.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2>Quick Start</h2>
+                <p>Add the SDK to your page and start generating links in seconds.</p>
+                <div class="result-box">
+                    <pre style="margin:0;white-space:pre-wrap;word-break:break-all;"><code>&lt;script src="../assets/js/linkqr.sdk.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    var url = LinkQR.whatsapp('1', '5551234567', 'Hello!');
+    console.log(url);
+    // → https://wa.me/15551234567?text=Hello%21
+
+    LinkQR.qr(url, document.getElementById('my-qr'), 256);
+&lt;/script&gt;</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2>API Reference</h2>
+                <table style="width:100%;border-collapse:collapse;margin:1rem 0;">
+                    <thead>
+                        <tr style="border-bottom:2px solid var(--color-border);">
+                            <th style="text-align:left;padding:0.5rem;">Method</th>
+                            <th style="text-align:left;padding:0.5rem;">Parameters</th>
+                            <th style="text-align:left;padding:0.5rem;">Returns</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom:1px solid var(--color-border);">
+                            <td style="padding:0.5rem;font-family:monospace;">LinkQR.whatsapp(cc, phone, msg)</td>
+                            <td style="padding:0.5rem;">Country code, phone number, message</td>
+                            <td style="padding:0.5rem;">String — wa.me URL</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--color-border);">
+                            <td style="padding:0.5rem;font-family:monospace;">LinkQR.telegram(user)</td>
+                            <td style="padding:0.5rem;">Username or invite link</td>
+                            <td style="padding:0.5rem;">String — t.me URL</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--color-border);">
+                            <td style="padding:0.5rem;font-family:monospace;">LinkQR.sms(phone, msg)</td>
+                            <td style="padding:0.5rem;">Phone number, message</td>
+                            <td style="padding:0.5rem;">String — sms: URI</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--color-border);">
+                            <td style="padding:0.5rem;font-family:monospace;">LinkQR.mailto(to, opts)</td>
+                            <td style="padding:0.5rem;">Recipient, options (subject, cc, bcc, body)</td>
+                            <td style="padding:0.5rem;">String — mailto: URL</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--color-border);">
+                            <td style="padding:0.5rem;font-family:monospace;">LinkQR.wifi(ssid, pass, enc, hidden)</td>
+                            <td style="padding:0.5rem;">SSID, password, encryption, hidden</td>
+                            <td style="padding:0.5rem;">String — WIFI: QR payload</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--color-border);">
+                            <td style="padding:0.5rem;font-family:monospace;">LinkQR.vcard(obj)</td>
+                            <td style="padding:0.5rem;">Object with firstName, lastName, phone, email, org, url</td>
+                            <td style="padding:0.5rem;">String — vCard 3.0 text</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--color-border);">
+                            <td style="padding:0.5rem;font-family:monospace;">LinkQR.utm(url, params)</td>
+                            <td style="padding:0.5rem;">Base URL, params (source, medium, campaign, term, content)</td>
+                            <td style="padding:0.5rem;">String — URL with UTM</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--color-border);">
+                            <td style="padding:0.5rem;font-family:monospace;">LinkQR.youtube(url, sec)</td>
+                            <td style="padding:0.5rem;">YouTube URL, start seconds</td>
+                            <td style="padding:0.5rem;">String — watch URL with t=</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--color-border);">
+                            <td style="padding:0.5rem;font-family:monospace;">LinkQR.qr(text, el, size)</td>
+                            <td style="padding:0.5rem;">Text, element, size</td>
+                            <td style="padding:0.5rem;">Undefined — renders QR to element</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2>Live Demo</h2>
+                <p>Try the SDK right here. Enter a WhatsApp number or any text to generate a QR code.</p>
+                <form id="demo-form" class="form-group" style="max-width:420px;">
+                    <label for="demo-phone">Phone number (with country code, no +)</label>
+                    <input type="text" id="demo-phone" class="form-control" placeholder="e.g. 15551234567" value="15551234567">
+                    <label for="demo-msg" style="margin-top:1rem;">Message</label>
+                    <input type="text" id="demo-msg" class="form-control" placeholder="Hello from LinkQR!" value="Hello from LinkQR!">
+                    <button type="submit" class="btn btn-primary" style="margin-top:1rem;">Generate QR</button>
+                </form>
+                <div class="qr-box">
+                    <div id="demo-qr"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2>License</h2>
+                <p>LinkQR.js SDK is free for personal and commercial use with attribution. You may embed it in websites, apps, and internal tools. Please keep the attribution comment in the source file or credit LinkQR Tools where appropriate.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2>FAQ</h2>
+                <details style="margin-bottom:1rem;border:1px solid var(--color-border);border-radius:var(--radius);padding:1rem;">
+                    <summary style="font-weight:600;cursor:pointer;">Is there a rate limit or daily cap?</summary>
+                    <p style="margin-top:0.5rem;color:var(--color-text-light);">No. The SDK runs entirely in the user's browser, so there are no server-side rate limits, API keys, or daily caps.</p>
+                </details>
+                <details style="margin-bottom:1rem;border:1px solid var(--color-border);border-radius:var(--radius);padding:1rem;">
+                    <summary style="font-weight:600;cursor:pointer;">Do I need an API key?</summary>
+                    <p style="margin-top:0.5rem;color:var(--color-text-light);">No. LinkQR.js is a client-side utility library. Just include the script and call the methods — no signup, no key, no backend.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="../about/index.html">About</a>
+                <a href="../contact/index.html">Contact</a>
+                <a href="../privacy-policy/index.html">Privacy Policy</a>
+                <a href="../terms/index.html">Terms</a>
+                <a href="index.html">Developers / API</a>
+            </div>
+            <p>&copy; <span data-year></span> LinkQR Tools. All rights reserved.</p>
+            <p class="small">🔒 Runs 100% in your browser — we couldn't read your data even if we wanted to. Free forever · Unlimited · No watermarks · No signup.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/linkqr.sdk.js" defer></script>
+    <script src="../assets/vendor/qrcode.min.js" defer></script>
+    <script defer>
+        (function() {
+            var form = document.getElementById('demo-form');
+            var qrEl = document.getElementById('demo-qr');
+            if (form && qrEl) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    var phone = document.getElementById('demo-phone').value.trim();
+                    var msg = document.getElementById('demo-msg').value.trim();
+                    if (!phone) return;
+                    var url = LinkQR.whatsapp('', phone, msg);
+                    qrEl.innerHTML = '';
+                    var div = document.createElement('div');
+                    qrEl.appendChild(div);
+                    LinkQR.qr(url, div, 256);
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

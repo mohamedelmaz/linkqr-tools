@@ -1,0 +1,29 @@
+{
+    "siteName": "LinkQR Tools",
+    "domain": "https://linkqr.tools",
+    "defaultLanguage": "en",
+    "defaultTitle": "LinkQR Tools - Free Link & QR Code Generators",
+    "defaultDescription": "Create WhatsApp links, QR codes, Telegram links, YouTube timestamp links, email links, SMS links, UTM links and more for free.",
+    "logo": "/assets/img/logo.svg",
+    "ogImage": "/assets/img/og-cover.svg",
+    "contactEmail": "contact@linkqr.tools",
+    "supportEmail": "support@linkqr.tools",
+    "generalEmail": "hello@linkqr.tools",
+    "adsense": {
+        "client": "ca-pub-XXXXXXXXXXXXXXXX",
+        "enabled": false
+    },
+    "analytics": {
+        "measurementId": "G-XXXXXXXXXX",
+        "enabled": false
+    },
+    "languages": [
+        "en",
+        "ar",
+        "es",
+        "pt",
+        "hi",
+        "fr",
+        "id"
+    ]
+}

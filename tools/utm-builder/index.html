@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTM Builder - Build UTM Parameters for Campaign Tracking - LinkQR Tools</title>
+    <meta name="description" content="Build UTM parameters for tracking marketing campaigns. Free UTM link builder.">
+    <link rel="canonical" href="https://linkqr.tools/tools/utm-builder/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LinkQR Tools">
+    <meta property="og:title" content="UTM Builder - Build UTM Parameters for Campaign Tracking - LinkQR Tools">
+    <meta property="og:description" content="Build UTM parameters for tracking marketing campaigns. Free UTM link builder.">
+    <meta property="og:url" content="https://linkqr.tools/tools/utm-builder/">
+    <meta property="og:image" content="https://linkqr.tools/assets/img/og-cover.png">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="UTM Builder - Build UTM Parameters for Campaign Tracking - LinkQR Tools">
+    <meta name="twitter:description" content="Build UTM parameters for tracking marketing campaigns. Free UTM link builder.">
+    <meta name="twitter:image" content="https://linkqr.tools/assets/img/og-cover.png">
+    <link rel="icon" href="../../assets/img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="manifest" href="../../manifest.webmanifest">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "UTM Builder",
+        "url": "https://linkqr.tools/tools/utm-builder/",
+        "description": "Build UTM parameters for tracking marketing campaigns.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "LinkQR Tools",
+            "url": "https://linkqr.tools/"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- © 2026 LinkQR Tools — https://linkqr.tools — All rights reserved. -->
+    <header class="site-header">
+        <div class="container">
+            <a href="../../index.html" class="brand">
+                <img src="../../assets/img/logo.svg" alt="LinkQR Tools logo" width="32" height="32">
+                <span>LinkQR Tools</span>
+            </a>
+            <nav class="main-nav">
+                <div class="dropdown">
+                    <a href="../../index.html" class="dropdown-toggle">Tools</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-group">Links &amp; QR</div>
+                        <a href="../../tools/whatsapp-link-generator/index.html">WhatsApp Link Generator</a>
+                        <a href="../../tools/whatsapp-qr-generator/index.html">WhatsApp QR Generator</a>
+                        <a href="../../tools/telegram-link-generator/index.html">Telegram Link Generator</a>
+                        <a href="../../tools/youtube-timestamp-link-generator/index.html">YouTube Timestamp Link Generator</a>
+                        <a href="../../tools/email-link-generator/index.html">Email Link Generator</a>
+                        <a href="../../tools/sms-link-generator/index.html">SMS Link Generator</a>
+                        <a href="../../tools/wifi-qr-generator/index.html">WiFi QR Generator</a>
+                        <a href="../../tools/vcard-qr-generator/index.html">vCard QR Generator</a>
+                        <a href="../../tools/utm-builder/index.html">UTM Builder</a>
+                        <a href="../../tools/character-counter/index.html">Character Counter</a>
+                        <div class="dropdown-group">Calculators</div>
+                        <a href="../../tools/age-calculator/index.html">Age Calculator</a>
+                        <a href="../../tools/hijri-gregorian-converter/index.html">Hijri-Gregorian Converter</a>
+                        <a href="../../tools/bmi-calculator/index.html">BMI Calculator</a>
+                        <a href="../../tools/calorie-calculator/index.html">Calorie Calculator</a>
+                    </div>
+                </div>
+                <a href="../../guides/index.html">Guides</a>
+                <a href="../../about/index.html">About</a>
+                <a href="../../contact/index.html">Contact</a>
+            </nav>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+  <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="4"/>
+    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+  </svg>
+  <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            <h1>UTM Builder</h1>
+            <p>Build UTM parameters for tracking marketing campaigns.</p>
+
+            <form id="utm-form" onsubmit="event.preventDefault();">
+                <div class="form-group">
+                    <label for="url">Website URL</label>
+                    <input type="url" id="url" class="form-control" placeholder="https://example.com">
+                </div>
+                <div class="form-group">
+                    <label for="source">Campaign Source (utm_source)</label>
+                    <input type="text" id="source" class="form-control" placeholder="e.g. google, newsletter">
+                </div>
+                <div class="form-group">
+                    <label for="medium">Campaign Medium (utm_medium)</label>
+                    <input type="text" id="medium" class="form-control" placeholder="e.g. cpc, email, social">
+                </div>
+                <div class="form-group">
+                    <label for="name">Campaign Name (utm_campaign)</label>
+                    <input type="text" id="name" class="form-control" placeholder="e.g. spring_sale">
+                </div>
+                <div class="form-group">
+                    <label for="term">Campaign Term (utm_term) - optional</label>
+                    <input type="text" id="term" class="form-control" placeholder="e.g. running+shoes">
+                </div>
+                <div class="form-group">
+                    <label for="content">Campaign Content (utm_content) - optional</label>
+                    <input type="text" id="content" class="form-control" placeholder="e.g. logolink or textlink">
+                </div>
+                <button type="button" id="generate-btn" class="btn btn-primary">Build Link</button>
+                <button type="button" id="copy-btn" class="btn btn-secondary">Copy Link</button>
+            </form>
+
+            <div id="result" class="result-box"></div>
+
+            <section class="content-section">
+                <h2>What are UTM parameters?</h2>
+                <p>UTM parameters are tags added to URLs to track marketing campaign performance in analytics tools like Google Analytics.</p>
+
+                <h2>Parameters</h2>
+                <p><strong>utm_source</strong> identifies the source (e.g. google, facebook). <strong>utm_medium</strong> identifies the medium (e.g. cpc, email). <strong>utm_campaign</strong> identifies the specific campaign. <strong>utm_term</strong> and <strong>utm_content</strong> are optional for paid search and A/B testing.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-links">
+
+                <a href="../../about/index.html">About</a>
+                <a href="../../contact/index.html">Contact</a>
+                <a href="../../privacy-policy/index.html">Privacy Policy</a>
+                <a href="../../terms/index.html">Terms</a>
+                <a href="../../developers/index.html">Developers / API</a>
+            </div>
+            <p>&copy; <span data-year></span> LinkQR Tools. All rights reserved.</p>
+            <p class="small">🔒 Runs 100% in your browser — we couldn't read your data even if we wanted to. Free forever · Unlimited · No watermarks · No signup.</p>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/app.js" defer></script>
+    <script src="../../assets/js/tools/utm-builder.js" defer></script>
+</body>
+</html>

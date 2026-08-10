@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator — Body Mass Index Calculator Free — LinkQR Tools</title>
+    <meta name="description" content="Calculate your Body Mass Index for free with metric and imperial units. Get BMI classification, healthy weight range, and instant results.">
+    <link rel="canonical" href="https://linkqr.tools/tools/bmi-calculator/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LinkQR Tools">
+    <meta property="og:title" content="BMI Calculator — Body Mass Index Calculator Free — LinkQR Tools">
+    <meta property="og:description" content="Calculate your Body Mass Index for free with metric and imperial units. Get BMI classification, healthy weight range, and instant results.">
+    <meta property="og:url" content="https://linkqr.tools/tools/bmi-calculator/">
+    <meta property="og:image" content="/assets/img/og-cover.png">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="BMI Calculator — Body Mass Index Calculator Free — LinkQR Tools">
+    <meta name="twitter:description" content="Calculate your Body Mass Index for free with metric and imperial units.">
+    <meta name="twitter:image" content="/assets/img/og-cover.png">
+    <link rel="icon" href="../../assets/img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="manifest" href="../../manifest.webmanifest">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "BMI Calculator",
+        "url": "https://linkqr.tools/tools/bmi-calculator/",
+        "description": "Calculate Body Mass Index with metric and imperial units.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "LinkQR Tools",
+            "url": "https://linkqr.tools/"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- © 2026 LinkQR Tools — https://linkqr.tools — All rights reserved. -->
+    <header class="site-header">
+        <div class="container">
+            <a href="../../index.html" class="brand">
+                <img src="../../assets/img/logo.svg" alt="LinkQR Tools logo" width="32" height="32">
+                <span>LinkQR Tools</span>
+            </a>
+            <nav class="main-nav">
+                <div class="dropdown">
+                    <a href="../../index.html" class="dropdown-toggle">Tools</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-group">Links &amp; QR</div>
+                        <a href="../../tools/whatsapp-link-generator/index.html">WhatsApp Link Generator</a>
+                        <a href="../../tools/whatsapp-qr-generator/index.html">WhatsApp QR Generator</a>
+                        <a href="../../tools/telegram-link-generator/index.html">Telegram Link Generator</a>
+                        <a href="../../tools/youtube-timestamp-link-generator/index.html">YouTube Timestamp Link Generator</a>
+                        <a href="../../tools/email-link-generator/index.html">Email Link Generator</a>
+                        <a href="../../tools/sms-link-generator/index.html">SMS Link Generator</a>
+                        <a href="../../tools/wifi-qr-generator/index.html">WiFi QR Generator</a>
+                        <a href="../../tools/vcard-qr-generator/index.html">vCard QR Generator</a>
+                        <a href="../../tools/utm-builder/index.html">UTM Builder</a>
+                        <a href="../../tools/character-counter/index.html">Character Counter</a>
+                        <div class="dropdown-group">Calculators</div>
+                        <a href="../../tools/age-calculator/index.html">Age Calculator</a>
+                        <a href="../../tools/hijri-gregorian-converter/index.html">Hijri-Gregorian Converter</a>
+                        <a href="../../tools/bmi-calculator/index.html">BMI Calculator</a>
+                        <a href="../../tools/calorie-calculator/index.html">Calorie Calculator</a>
+                    </div>
+                </div>
+                <a href="../../guides/index.html">Guides</a>
+                <a href="../../about/index.html">About</a>
+                <a href="../../contact/index.html">Contact</a>
+            </nav>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+  <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="4"/>
+    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+  </svg>
+  <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            <h1>BMI Calculator</h1>
+            <p>Calculate your Body Mass Index with metric and imperial units.</p>
+
+            <div class="tool-card">
+                <div class="form-group">
+                    <label for="unit-toggle">Unit System</label>
+                    <select id="unit-toggle" class="form-control">
+                        <option value="metric">Metric (cm, kg)</option>
+                        <option value="imperial">Imperial (ft/in, lb)</option>
+                    </select>
+                </div>
+
+                <form id="bmi-form" onsubmit="event.preventDefault();">
+                    <div id="metric-inputs">
+                        <div class="form-group">
+                            <label for="height-cm">Height (cm)</label>
+                            <input type="number" id="height-cm" class="form-control" placeholder="e.g. 175" min="1" step="0.1">
+                        </div>
+                        <div class="form-group">
+                            <label for="weight-kg">Weight (kg)</label>
+                            <input type="number" id="weight-kg" class="form-control" placeholder="e.g. 70" min="1" step="0.1">
+                        </div>
+                    </div>
+
+                    <div id="imperial-inputs" style="display:none;">
+                        <div class="form-group">
+                            <label for="height-ft">Height (ft)</label>
+                            <input type="number" id="height-ft" class="form-control" placeholder="e.g. 5" min="0" step="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="height-in">Height (in)</label>
+                            <input type="number" id="height-in" class="form-control" placeholder="e.g. 9" min="0" step="0.1">
+                        </div>
+                        <div class="form-group">
+                            <label for="weight-lb">Weight (lb)</label>
+                            <input type="number" id="weight-lb" class="form-control" placeholder="e.g. 154" min="1" step="0.1">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Calculate BMI</button>
+                </form>
+
+                <div class="result-box" id="bmi-result" style="display:none;">
+                    <p><strong>BMI:</strong> <span id="bmi-value"></span></p>
+                    <p><strong>Classification:</strong> <span id="bmi-class"></span></p>
+                    <p><strong>Healthy Weight Range:</strong> <span id="bmi-range"></span></p>
+                    <p class="notice">Not medical advice.</p>
+                </div>
+            </div>
+
+            <section class="content-section">
+                <h2>Frequently Asked Questions</h2>
+                <details style="margin-bottom:1rem;">
+                    <summary style="cursor:pointer;font-weight:500;">How accurate is BMI?</summary>
+                    <p style="margin-top:0.5rem;color:var(--color-text-light);">BMI is a general screening tool. It does not distinguish between muscle and fat, so very muscular people may be classified as overweight despite low body fat.</p>
+                </details>
+                <details style="margin-bottom:1rem;">
+                    <summary style="cursor:pointer;font-weight:500;">Does BMI account for muscle vs fat?</summary>
+                    <p style="margin-top:0.5rem;color:var(--color-text-light);">No. BMI only considers height and weight. Athletes and bodybuilders often have high BMI due to muscle mass. Use BMI as one of several health indicators.</p>
+                </details>
+                <details style="margin-bottom:1rem;">
+                    <summary style="cursor:pointer;font-weight:500;">What is a healthy BMI range?</summary>
+                    <p style="margin-top:0.5rem;color:var(--color-text-light);">The WHO defines normal weight as BMI 18.5–24.9. Below 18.5 is underweight, 25–29.9 is overweight, and 30 or above is obese. These are general guidelines for adults.</p>
+                </details>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="../../about/index.html">About</a>
+                <a href="../../contact/index.html">Contact</a>
+                <a href="../../privacy-policy/index.html">Privacy Policy</a>
+                <a href="../../terms/index.html">Terms</a>
+                <a href="../../developers/index.html">Developers / API</a>
+            </div>
+            <p>&copy; <span data-year></span> LinkQR Tools. All rights reserved.</p>
+            <p class="small">🔒 Runs 100% in your browser — we couldn't read your data even if we wanted to. Free forever · Unlimited · No watermarks · No signup.</p>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/app.js" defer></script>
+    <script src="../../assets/js/tools/bmi-calculator.js" defer></script>
+</body>
+</html>

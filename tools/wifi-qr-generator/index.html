@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi QR Generator - Create WiFi QR Codes - LinkQR Tools</title>
+    <meta name="description" content="Generate a QR code that connects devices to a WiFi network. Free and private.">
+    <link rel="canonical" href="https://linkqr.tools/tools/wifi-qr-generator/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LinkQR Tools">
+    <meta property="og:title" content="WiFi QR Generator - Create WiFi QR Codes - LinkQR Tools">
+    <meta property="og:description" content="Generate a QR code that connects devices to a WiFi network. Free and private.">
+    <meta property="og:url" content="https://linkqr.tools/tools/wifi-qr-generator/">
+    <meta property="og:image" content="https://linkqr.tools/assets/img/og-cover.png">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="WiFi QR Generator - Create WiFi QR Codes - LinkQR Tools">
+    <meta name="twitter:description" content="Generate QR codes that connect devices to WiFi networks. Free and private.">
+    <meta name="twitter:image" content="https://linkqr.tools/assets/img/og-cover.png">
+    <link rel="icon" href="../../assets/img/logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="manifest" href="../../manifest.webmanifest">
+    <script src="../../assets/vendor/qrcode.min.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "WiFi QR Generator",
+        "url": "https://linkqr.tools/tools/wifi-qr-generator/",
+        "description": "Generate QR codes that connect devices to WiFi networks.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "LinkQR Tools",
+            "url": "https://linkqr.tools/"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- © 2026 LinkQR Tools — https://linkqr.tools — All rights reserved. -->
+    <header class="site-header">
+        <div class="container">
+            <a href="../../index.html" class="brand">
+                <img src="../../assets/img/logo.svg" alt="LinkQR Tools logo" width="32" height="32">
+                <span>LinkQR Tools</span>
+            </a>
+            <nav class="main-nav">
+                <div class="dropdown">
+                    <a href="../../index.html" class="dropdown-toggle">Tools</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-group">Links &amp; QR</div>
+                        <a href="../../tools/whatsapp-link-generator/index.html">WhatsApp Link Generator</a>
+                        <a href="../../tools/whatsapp-qr-generator/index.html">WhatsApp QR Generator</a>
+                        <a href="../../tools/telegram-link-generator/index.html">Telegram Link Generator</a>
+                        <a href="../../tools/youtube-timestamp-link-generator/index.html">YouTube Timestamp Link Generator</a>
+                        <a href="../../tools/email-link-generator/index.html">Email Link Generator</a>
+                        <a href="../../tools/sms-link-generator/index.html">SMS Link Generator</a>
+                        <a href="../../tools/wifi-qr-generator/index.html">WiFi QR Generator</a>
+                        <a href="../../tools/vcard-qr-generator/index.html">vCard QR Generator</a>
+                        <a href="../../tools/utm-builder/index.html">UTM Builder</a>
+                        <a href="../../tools/character-counter/index.html">Character Counter</a>
+                        <div class="dropdown-group">Calculators</div>
+                        <a href="../../tools/age-calculator/index.html">Age Calculator</a>
+                        <a href="../../tools/hijri-gregorian-converter/index.html">Hijri-Gregorian Converter</a>
+                        <a href="../../tools/bmi-calculator/index.html">BMI Calculator</a>
+                        <a href="../../tools/calorie-calculator/index.html">Calorie Calculator</a>
+                    </div>
+                </div>
+                <a href="../../guides/index.html">Guides</a>
+                <a href="../../about/index.html">About</a>
+                <a href="../../contact/index.html">Contact</a>
+            </nav>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+  <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="4"/>
+    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+  </svg>
+  <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            <h1>WiFi QR Generator</h1>
+            <p>Generate a QR code that connects devices to a WiFi network.</p>
+
+            <form id="wifi-form" onsubmit="event.preventDefault();">
+                <div class="form-group">
+                    <label for="ssid">Network Name (SSID)</label>
+                    <input type="text" id="ssid" class="form-control" placeholder="WiFi network name">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="text" id="password" class="form-control" placeholder="WiFi password">
+                </div>
+                <div class="form-group">
+                    <label for="encryption">Encryption</label>
+                    <select id="encryption" class="form-control">
+                        <option value="WPA">WPA/WPA2</option>
+                        <option value="WEP">WEP</option>
+                        <option value="nopass">No Password</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="hidden">Hidden Network</label>
+                    <select id="hidden" class="form-control">
+                        <option value="false">No</option>
+                        <option value="true">Yes</option>
+                    </select>
+                </div>
+                <button type="button" id="generate-btn" class="btn btn-primary">Generate QR</button>
+                <button type="button" id="download-btn" class="btn btn-secondary">Download QR</button>
+                <button type="button" id="print-sign-btn" class="btn btn-secondary" type="button">🖨️ Print Café Sign</button>
+            </form>
+
+            <div id="result" class="result-box"></div>
+            <div id="qr-area" class="qr-box" style="display:none;">
+                <div id="qr"></div>
+            </div>
+
+            <section class="content-section">
+                <h2>How it works</h2>
+                <p>The QR code contains a WIFI: formatted string. When scanned, the device prompts to connect to the network automatically.</p>
+
+                <h2>Privacy note</h2>
+                <p>Your WiFi password is processed in your browser only and never sent to any server.</p>
+
+                <h2>Frequently asked questions</h2>
+                <p><strong>What is WPA vs WEP vs No Password?</strong><br>
+                WPA/WPA2 is the most common and secure encryption. WEP is older and less secure. No Password means the network is open.</p>
+                <p><strong>When should I use the hidden network option?</strong><br>
+                Select "Yes" if your router does not broadcast its SSID. Most home networks are not hidden.</p>
+                <p><strong>Why does the QR code not work?</strong><br>
+                Make sure you selected the correct encryption type. Some older devices do not support WPA3. Also, special characters in passwords may cause issues on some devices.</p>
+            </section>
+            <p class="notice">🖨️ Café or Airbnb host? Generate, click "Print Café Sign", and hang it — your guests connect in one scan.</p>
+        </div>
+    </main>
+
+    <div id="print-sign" class="print-sign" hidden>
+        <h2>☕ Connect to our WiFi</h2>
+        <p class="sign-line">Network: <strong id="sign-ssid"></strong></p>
+        <p class="sign-line">Password: <strong id="sign-pass"></strong></p>
+        <div id="sign-qr"></div>
+        <p class="sign-note">Scan with your camera to connect instantly — no typing needed.</p>
+        <p class="sign-credit">Created free with linkqr.tools</p>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-links">
+
+                <a href="../../about/index.html">About</a>
+                <a href="../../contact/index.html">Contact</a>
+                <a href="../../privacy-policy/index.html">Privacy Policy</a>
+                <a href="../../terms/index.html">Terms</a>
+                <a href="../../developers/index.html">Developers / API</a>
+            </div>
+            <p>&copy; <span data-year></span> LinkQR Tools. All rights reserved.</p>
+            <p class="small">🔒 Runs 100% in your browser — we couldn't read your data even if we wanted to. Free forever · Unlimited · No watermarks · No signup.</p>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/app.js" defer></script>
+    <script src="../../assets/js/tools/png-signer.js" defer></script>
+    <script src="../../assets/js/tools/wifi-qr-generator.js" defer></script>
+</body>
+</html>

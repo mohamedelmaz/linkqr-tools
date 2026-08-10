@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="LinkQR Tools logo">
+  <rect width="512" height="512" rx="96" fill="#2563eb"/>
+  <rect x="92" y="92" width="132" height="132" rx="28" fill="none" stroke="#ffffff" stroke-width="32"/>
+  <rect x="130" y="130" width="56" height="56" rx="12" fill="#ffffff"/>
+  <rect x="288" y="92" width="132" height="132" rx="28" fill="none" stroke="#ffffff" stroke-width="32"/>
+  <rect x="326" y="130" width="56" height="56" rx="12" fill="#ffffff"/>
+  <rect x="92" y="288" width="132" height="132" rx="28" fill="none" stroke="#ffffff" stroke-width="32"/>
+  <rect x="130" y="326" width="56" height="56" rx="12" fill="#ffffff"/>
+  <circle cx="322" cy="322" r="44" fill="none" stroke="#ffffff" stroke-width="32"/>
+  <circle cx="382" cy="382" r="44" fill="none" stroke="#ffffff" stroke-width="32"/>
+</svg>
