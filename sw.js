@@ -1,28 +1,83 @@
-var CACHE = 'linkqr-v1';
-var CORE = ['/', '/index.html', '/404.html', '/assets/css/style.css', '/assets/js/app.js', '/assets/img/logo.svg'];
+var CACHE = 'linkqr-cache-v1';
+var CORE = [
+  '/',
+  '/index.html',
+  '/donate/',
+  '/404.html',
+  '/assets/css/style.css',
+  '/assets/js/app.js',
+  '/assets/img/logo.svg',
+  '/manifest.webmanifest'
+];
 
 self.addEventListener('install', function (e) {
-    e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(CORE); }));
+  e.waitUntil(
+    caches.open(CACHE).then(function (cache) {
+      return cache.addAll(CORE);
+    })
+  );
+  self.skipWaiting();
 });
 
 self.addEventListener('activate', function (e) {
-    e.waitUntil(caches.keys().then(function (ks) {
-        return Promise.all(ks.filter(function (k) { return k !== CACHE; }).map(function (k) { return caches.delete(k); }));
-    }));
+  e.waitUntil(
+    caches.keys().then(function (keys) {
+      return Promise.all(
+        keys.filter(function (key) {
+          return key !== CACHE;
+        }).map(function (key) {
+          return caches.delete(key);
+        })
+      );
+    })
+  );
+  self.clients.claim();
 });
 
 self.addEventListener('fetch', function (e) {
-    if (e.request.method !== 'GET') return;
-    e.respondWith(caches.match(e.request).then(function (hit) {
-        if (hit) return hit;
-        return fetch(e.request).then(function (res) {
-            if (res.ok && e.request.url.startsWith(self.location.origin)) {
-                var cp = res.clone();
-                caches.open(CACHE).then(function (c) { c.put(e.request, cp); });
-            }
-            return res;
-        }).catch(function () {
-            if (e.request.mode === 'navigate') return caches.match('/404.html');
-        });
-    }));
+  if (e.request.method !== 'GET') return;
+
+  var request = e.request;
+  var url = new URL(request.url);
+
+  if (url.origin !== self.location.origin) return;
+
+  if (request.mode === 'navigate') {
+    e.respondWith(
+      fetch(request)
+        .then(function (response) {
+          if (response && response.status === 200) {
+            var clone = response.clone();
+            caches.open(CACHE).then(function (cache) {
+              cache.put(request, clone);
+            });
+          }
+          return response;
+        })
+        .catch(function () {
+          return caches.match(request).then(function (cached) {
+            if (cached) return cached;
+            return caches.match('/404.html');
+          });
+        })
+    );
+    return;
+  }
+
+  e.respondWith(
+    caches.match(request).then(function (cached) {
+      if (cached) return cached;
+      return fetch(request).then(function (response) {
+        if (response && response.status === 200) {
+          var clone = response.clone();
+          caches.open(CACHE).then(function (cache) {
+            cache.put(request, clone);
+          });
+        }
+        return response;
+      }).catch(function () {
+        return new Response('Offline', { status: 503, statusText: 'Service Unavailable' });
+      });
+    })
+  );
 });
