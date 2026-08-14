@@ -1,7 +1,6 @@
 var CACHE = 'linkqr-cache-v1';
 var CORE = [
   '/',
-  '/index.html',
   '/donate/',
   '/404.html',
   '/assets/css/style.css',
